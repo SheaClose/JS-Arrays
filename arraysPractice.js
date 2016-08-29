@@ -56,10 +56,11 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 
 function evenFinder(arr) {
   for (var i = arr.length - 1; i >=0; i--) {
-    if (arr[i] !% 0) {
-      delete arr[i];
+    if (arr[i] % 2 !== 0) {
+      arr.splice(i,1);
     }
   }
+  return arr;
 }  //Code Here
 
 
@@ -72,7 +73,22 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 
 
 
-  //Code Here
+function divider(arr) {
+  var evens = [];
+  var odds = [];
+  var evensAndOdds = [];
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 === 0) {
+      evens.push(arr[i]);
+    }
+    else {
+      odds.push(arr[i]);
+    }
+  }
+  evensAndOdds.push(evens, odds);
+  return evensAndOdds
+
+}  //Code Here
 
 
 //Next Problem
@@ -86,7 +102,15 @@ var getRandomArbitrary = function() {
 
 // Your job is to write a function named finder that will get a random number (by invoking getRandomArbitrary), then loop through the array (that will be passed in as a parameter) to see if that random number is in the array. If it is, return true, if it's not, return false
 
-  //Code Here
+function finder(arr) {
+    var randomNumber = getRandomArbitrary();
+    for (var i = 0; i < arr.length; i++) {
+      if (randomNumber === arr[i]) {
+        return true;
+      }
+    }
+  return false;
+}  //Code Here
 
   //Code Here
 
@@ -98,8 +122,9 @@ var getRandomArbitrary = function() {
 var str = 'this is my sentence';
 //Write a function called reverse that takes a given str as it's only argument and returns that string after it's been reversed
 
-  //Code Here
-
+function reverse(str) {
+  return str.split("").reverse().join('');
+}
 
 //Next Problem
 
