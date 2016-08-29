@@ -173,8 +173,8 @@ function addItem(arr, item) {
 //Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
 
 function maker() {
-  var newArr;
-  for (var i = 0; i < 215; i++) {
+  var newArr = [];
+  for (var i = 1; i < 216; i++) {
     newArr.push(i);
   }
   return newArr;
@@ -193,7 +193,7 @@ function addTen(num) {
  for (var i = 0; i < num.length; i++) {
  	num[i] = Number(num[i]) + 10;
  }
-	return numbers;
+	return num;
 }  //Code Here  //Code Here
 
 
@@ -215,7 +215,12 @@ for(var i = 0; i < num2; i++){
 //Above is some code that adds a random number of values to both arr1 and arr2.
 //Write a function called 'longer' that is given arr1 and arr2 as it's only arguments. Return the array which is longest.
 
-  //Code Here
+function longer(arr1, arr2) {
+  if (arr1.length > arr2.length) {
+    return arr1;
+  }
+  return arr2;
+}  //Code Here
 
 
 /*As a continuation of the previous problem, write another function called 'both'.
@@ -225,6 +230,18 @@ for(var i = 0; i < num2; i++){
 */
 
   //Code Here
+function both(arr1, arr2) {
+  var match = [];
+  for (var i = 0; i < arr1.length; i++) {
+    for (var j = 0; j < arr2.length; j++) {
+      if (arr1[i] === arr2[j]) {
+        match.push(arr1[i]);
+        break;
+      }
+    }
+  }
+  return match;
+}
 
 
 
@@ -264,12 +281,20 @@ var colt = {
 array with those four objects. After that console.log the length of the Array and make
 sure that it's equal to 4. */
 
-  //Code Here
+devMountainEmployees.push(tyler, cahlan, ryan, colt);
+console.log (devMountainEmployees.length);  //Code Here
+
 
 /*Now let's say Cahlan has a mental breakdown and has to take a leave of absence to 'find himself'.
 Loop through your devMountainEmployees until you find cahlan, then remove him from the array.*/
 
-  //Code Here
+for (var i = 0; i < devMountainEmployees.length; i++) {
+  for (var key in devMountainEmployees[i]) {
+  	if (devMountainEmployees[i][key] === 'Cahlan') {
+  		devMountainEmployees.splice(i, 1);
+  	}
+  }
+}  //Code Here
 
 
 
@@ -311,7 +336,7 @@ of Data is to have an Array full of objects. */
 
 //Create an empty array called users.
 
-  //Code Here
+var users = [];  //Code Here
 
 /*Now add three user objects to your users array. Each user object should contain the
 following properties. name, email, password, username.*/
@@ -324,7 +349,20 @@ var user1 = {
     username: 'infiniateLoop'
 };
 
-//Your Code Here
+var user2 = {
+    name: 'Shea Close',
+    email: 'Shea_Close@yahoo.com',
+    password: 'BuffaloBills',
+    username: 'Shea_Close'
+};
+var user3 = {
+    name: 'Chrissy Zahn',
+    email: 'bshchrissy@gmail.com',
+    password: 'lalala123',
+    username: 'bshchrissy'
+};
+users.push(user1, user2, user3);
+console.log(users);//Your Code Here
 
 /*Now you have a very common data structure. Twitter is a good use case.
 It's easy to imagine that your followers list on Twitter is an Array full or objects
@@ -334,6 +372,12 @@ and those objects contain properties about the specific person you follow.*/
 objects until you find Tyler's account (use tylermcginnis33@gmail.com to find him).
 Once you find the particular index he's located in, delete him from the array.*/
 
-  //Code Here
+for (var i = 0; i < users.length; i++) {
+  for (var key in users[i]) {
+    if (users[i][key] === "tylermcginnis33@gmail.com") {
+      users.splice(i, 1);
+    }
+  }
+}  //Code Here
 
 //The activity we just did is very much how data works in 'the real world'.
