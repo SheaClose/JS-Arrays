@@ -144,21 +144,47 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
   In both the removeItem function and the addItem function, you will also need to check for valid aurguments. Specrunner will try to call your functions without passing in valid aurguments. When this happens, you will need to respond by returning an empty array.
 */
-
   //Code Here
-
-//removeItem(myGroceryList, 'chips') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 //addItem(myGroceryList, 'Jerky') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs', 'Jerky'];
-
-
+function removeItem(arr, item) {
+  var emptyArray = [];
+  if ( !Array.isArray(arr) ||  typeof item !== 'string') {
+     return emptyArray;
+   }
+  for (var i = arr.length -1; i >= 0; i--) {
+    if (arr[i] === item) {
+      arr.splice(i, 1);
+    }
+  }
+  return arr;
+}
 
 //Next Problem
 
-
+function addItem(arr, item) {
+  var emptyArray = [];
+  if ( !Array.isArray(arr) || arr.length === 0 ||  typeof item !== 'string') {
+     return emptyArray;
+   }
+  for (var i = arr.length -1; i >= 0; i--) {
+    if (arr[i] === item) {
+      emptyArray.push(arr.splice(i, 1););
+      return emptyArray;
+    }
+  }
+  myGroceryList.push(item);
+  return arr;
+}
 
 //Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
 
-  //Code Here
+function maker() {
+  var newArr;
+  for (var i = 0; i < 215; i++) {
+    newArr.push(i);
+  }
+  return newArr;
+}   //Code Here
 
 
 
