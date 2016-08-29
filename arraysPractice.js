@@ -163,17 +163,11 @@ function removeItem(arr, item) {
 
 function addItem(arr, item) {
   var emptyArray = [];
-  if ( !Array.isArray(arr) || arr.length === 0 ||  typeof item !== 'string') {
+  if ( !Array.isArray(arr) ||  typeof item !== 'string') {
      return emptyArray;
    }
-  for (var i = arr.length -1; i >= 0; i--) {
-    if (arr[i] === item) {
-      emptyArray.push(arr.splice(i, 1););
-      return emptyArray;
-    }
-  }
-  myGroceryList.push(item);
-  return arr;
+    arr.push(item);
+    return arr;
 }
 
 //Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
@@ -195,7 +189,12 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 //Write a function called addTen that is given 'numbers' as it's only argument and returns a new
 //array after adding ten to each item in numbers. *Verify your answer is correct. --> [15, 19, 26, 29, 35, 44, 58]
 
-  //Code Here
+function addTen(num) {
+ for (var i = 0; i < num.length; i++) {
+ 	num[i] = Number(num[i]) + 10;
+ }
+	return numbers;
+}  //Code Here  //Code Here
 
 
 
